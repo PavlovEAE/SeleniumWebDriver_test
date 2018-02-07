@@ -1,2 +1,2 @@
 ﻿# SeleniumWebDriver_test
-Repositories for courses --- Repos--- SeleniumWebDriver раипра
+Repositories for courses --- Repos--- SeleniumWebDriver
