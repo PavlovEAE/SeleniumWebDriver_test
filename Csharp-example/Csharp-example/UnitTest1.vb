@@ -1,9 +1,39 @@
-﻿Imports System.Text
-Imports Microsoft.VisualStudio.TestTools.UnitTesting
+﻿Using System;
+Using NUnit.Framework;
+Using OpenQA.Selenium;
+Using OpenQA.Selenium.Chrome;
+Using OpenQA.Selenium.IE;
+Using OpenQA.Selenium.Support.UI;
 
-<TestClass()> Public Class UnitTest1
+Namespace csharp_example
+{
+    [TestFixture]
+    Public Class MyFirstTest
+    {
+        Private IWebDriver driver;
+        Private WebDriverWait wait;
 
-    <TestMethod()> Public Sub TestMethod1()
-    End Sub
+        [SetUp]
+        Public void start()
+        {
+            driver = New CromeDriver();
+            wait = New WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        }
 
-End Class
+        [Test]
+        Public void FirstTest ()
+        {
+            driver.Url = "http://www.google.com/";
+            driver.FindElement(By.Name("q")).SendKeys("webdriver");
+            driver.FindElement(By.Name("btnG")).Click();
+            wait.Until(ExpectedConditions.TitleIs("webdriver - Поиск в Google"));
+        }
+
+        [TearDown]
+        Public void Stop()
+        {
+            driver.Quit();
+            driver = null;
+        }
+    }
+}
