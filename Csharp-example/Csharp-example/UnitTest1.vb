@@ -1,43 +1,35 @@
-﻿Using System;
-Using NUnit.Framework;
-Using OpenQA.Selenium;
-Using OpenQA.Selenium.Chrome;
-Using OpenQA.Selenium.IE;
-Using OpenQA.Selenium.Support.UI;
+﻿Imports System
+Imports NUnit.Framework
+Imports NUnit.Framework.Internal
+Imports OpenQA.Selenium
+Imports OpenQA.Selenium.Chrome
+Imports OpenQA.Selenium.IE
+Imports OpenQA.Selenium.Support.UI
 
-Namespace csharp_example
-{
-    [TestFixture]
-    Public Class MyFirstTest
-    {
-        Private IWebDriver driver;
-        Private WebDriverWait wait;
 
-        [SetUp]
-        Public void start()
-        {
-            driver = New CromeDriver();
-            wait = New WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        }
+<TestFixture()>
+Public Class MyFirstTest
+    Dim _driver As IWebDriver
+    Dim _wait As WebDriverWait
 
-        [Test]
-        Public void FirstTest ()
-        {
-            driver.Url = "http://www.google.com/";
-            driver.FindElement(By.Name("q")).SendKeys("webdriver");
-            driver.FindElement(By.Name("btnG")).Click();
-            wait.Until(ExpectedConditions.TitleIs("webdriver - Поиск в Google"));
-        }
+    <SetUp()>
+    Public Sub Start()
+        _driver = New ChromeDriver()
+        _wait = New WebDriverWait(_driver, TimeSpan.FromSeconds(10))
+    End Sub
 
-        [TearDown]
-        Public void Stop()
-Public Sub New()
+    <Test()>
+    Public Sub FirstTest()
 
-        End Sub
+        _driver.Url = "http://www.google.com/"
+        _driver.FindElement(By.Name("q")).SendKeys("webdriver")
+        _driver.FindElement(By.Name("btnK")).Click()
+        _wait.Until(ExpectedConditions.TitleIs("webdriver - Поиск в Google"))
+    End Sub
 
-                {
-            driver.Quit();
-            driver = null;
-        }
-    }
-}End Class
+    <TearDown()>
+    Public Sub TearDown()
+        _driver.Quit()
+        _driver.Dispose()
+    End Sub
+End Class
