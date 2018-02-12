@@ -31,9 +31,13 @@ Namespace csharp_example
 
         [TearDown]
         Public void Stop()
-        {
+Public Sub New()
+
+        End Sub
+
+                {
             driver.Quit();
             driver = null;
         }
     }
-}
+}End Class
