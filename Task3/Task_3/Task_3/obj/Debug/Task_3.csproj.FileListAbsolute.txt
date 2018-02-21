@@ -14,5 +14,6 @@ C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task3\Task_3\Task_3\b
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task3\Task_3\Task_3\bin\Debug\nunit.framework.xml
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task3\Task_3\Task_3\bin\Debug\WebDriver.xml
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task3\Task_3\Task_3\bin\Debug\WebDriver.Support.xml
+C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task3\Task_3\Task_3\obj\Debug\Task_3.csprojResolveAssemblyReference.cache
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task3\Task_3\Task_3\obj\Debug\Task_3.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task3\Task_3\Task_3\obj\Debug\Task_3.pdb

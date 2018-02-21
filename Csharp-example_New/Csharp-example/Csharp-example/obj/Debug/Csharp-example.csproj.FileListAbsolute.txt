@@ -7,6 +7,5 @@ C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Csharp-example_New\Cs
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Csharp-example_New\Csharp-example\Csharp-example\bin\Debug\nunit.framework.xml
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Csharp-example_New\Csharp-example\Csharp-example\bin\Debug\WebDriver.xml
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Csharp-example_New\Csharp-example\Csharp-example\bin\Debug\WebDriver.Support.xml
-C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Csharp-example_New\Csharp-example\Csharp-example\obj\Debug\Csharp-example.csprojResolveAssemblyReference.cache
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Csharp-example_New\Csharp-example\Csharp-example\obj\Debug\Csharp-example.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Csharp-example_New\Csharp-example\Csharp-example\obj\Debug\Csharp-example.pdb
