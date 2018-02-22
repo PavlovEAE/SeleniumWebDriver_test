@@ -7,13 +7,12 @@ C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Deb
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\Mono.Cecil.Rocks.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\Task_7.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\Task_7.pdb
-C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\nunit.framework.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\WebDriver.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\WebDriver.Support.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\nunit.framework.xml
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\WebDriver.xml
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\bin\Debug\WebDriver.Support.xml
-C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\obj\Debug\Task_7.csprojResolveAssemblyReference.cache
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\obj\Debug\Task_7.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\obj\Debug\Task_7.pdb
+C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Task_7\Task_7\obj\Debug\Task_7.csprojResolveAssemblyReference.cache
