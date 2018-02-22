@@ -1,4 +1,8 @@
 target/
+v14/
+packages/
+bin/
+debug/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
