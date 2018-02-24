@@ -24,7 +24,7 @@ namespace csharp_example
         }
 
         [Test]
-        public void FirstTest()
+        public void FirstTest_Task_7()
         {
             driver.Url = "http://localhost/litecart/admin/";
             driver.FindElement(By.Name("username")).SendKeys("admin");
