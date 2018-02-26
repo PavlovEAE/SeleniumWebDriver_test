@@ -33,7 +33,7 @@ namespace csharp_example_task_9
             driver.FindElement(By.Name("password")).SendKeys("admin");
             driver.FindElement(By.Name("login")).Click();
 
-            //проверка сортировкм стран          
+            //проверка сортировки стран          
             var name_countries = driver.FindElements(By.CssSelector("tr.row td a:not([title=Edit])"));
             var SortCountriesNames = new List<String>();
             foreach (var item in name_countries)
@@ -44,10 +44,9 @@ namespace csharp_example_task_9
             var sortedCountries = SortCountriesNames.OrderBy(x => x);
             bool isSorteredList = SortCountriesNames.Equals(sortedCountries);
             
-            //Находим страны где зон больше 0
+            //Нахождение списка стран где количество зон не равно 0
             var rows = driver.FindElements(By.CssSelector("tbody tr.row"));
             var SortZonesNames = new List<String>();
-
             foreach (var Zones in rows)
             {
                 var ZonesNumber = Zones.FindElement(By.XPath(".//td[6]")).Text;
@@ -75,6 +74,41 @@ namespace csharp_example_task_9
                // driver.FindElement(By.CssSelector("p button[name=cancel]"));
             }
         }
+
+        [Test]
+
+        public void FirstTest_Task_9_2()
+        {
+            driver.Url = "http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones";
+            driver.FindElement(By.Name("username")).SendKeys("admin");
+            driver.FindElement(By.Name("password")).SendKeys("admin");
+            driver.FindElement(By.Name("login")).Click();
+            //Создание списка ссылок на страны
+            var rows2 = driver.FindElements(By.CssSelector("form[name=geo_zones_form] tr.row"));
+            var countresLinks = new List<String>();
+            foreach (var links in rows2)
+            {
+                var Linkcountry = links.FindElement(By.XPath(".//td[3]//a")).GetAttribute("href");
+                countresLinks.Add(Linkcountry);
+            }
+
+            //проверка сортировки геозон внутри списка стран
+            foreach (var CountriesName2 in countresLinks)
+            {
+                driver.Url = CountriesName2;
+                Assert.DoesNotThrow(() => driver.FindElement(By.XPath("//h1[contains(.,'Edit Geo Zone')]")));
+                var ZonesCountriesNames2 = driver.FindElements(By.CssSelector("table#table-zones tr:not(.header) select:not(.select2-hidden-accessible)"));
+                var SortZonesCountriesNames2 = new List<String>();
+                foreach (var item3 in ZonesCountriesNames2)
+                {
+                    var item3_name = item3.Text;
+                    SortZonesCountriesNames2.Add(item3_name);
+                }
+                var SortedZones2 = SortZonesCountriesNames2.OrderBy(x => x);
+                bool isSorteredList3 = SortZonesCountriesNames2.Equals(SortedZones2);
+            }
+        }
+
 
         [TearDown]
         public void stop()
