@@ -66,6 +66,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Task_10.cs" />
     <Compile Include="Task_9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
