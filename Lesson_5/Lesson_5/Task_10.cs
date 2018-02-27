@@ -20,7 +20,7 @@ namespace csharp_example_task_10
         [SetUp]
         public void start()
         {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
 
@@ -42,8 +42,10 @@ namespace csharp_example_task_10
             Assert.AreEqual(driver.FindElement(By.CssSelector("div#box-campaigns li:first-child s")).GetAttribute("class"), "regular-price");
             Assert.AreEqual(driver.FindElement(By.CssSelector("div#box-campaigns li:first-child strong")).GetAttribute("class"), "campaign-price");
 //проверяем стили написания цен
-            Assert.AreEqual(driver.FindElement(By.CssSelector("div#box-campaigns li:first-child s")).GetCssValue("text-decoration-line"), "line-through");
-            Assert.AreEqual(driver.FindElement(By.CssSelector("div#box-campaigns li:first-child strong")).GetCssValue("font-weight"), "700");  
+            var lineThroughSale1 = driver.FindElement(By.CssSelector("div#box-campaigns li:first-child s")).GetCssValue("text-decoration");
+            Assert.IsTrue(lineThroughSale1.Contains("line-through"));
+            var fattySale1 = driver.FindElement(By.CssSelector("div#box-campaigns li:first-child strong")).GetCssValue("font-weight");
+            Assert.Contains(fattySale1, new[] { "bold", "700", "800", "900" });
             
 //проверяем размер
             var sizeRegularPrice1 = driver.FindElement(By.CssSelector("div#box-campaigns li:first-child s")).Size;
@@ -57,12 +59,12 @@ namespace csharp_example_task_10
             var campaignPrice1 = driver.FindElement(By.CssSelector("div#box-campaigns li:first-child strong")).Text;
 //проверяем серый цвет
             var colorRegularPrice1 = driver.FindElement(By.CssSelector("div#box-campaigns li:first-child s.regular-price")).GetCssValue("color");
-            var dividecolorRegular1 = colorRegularPrice1.Replace("rgba(", "").Replace(")", "").Replace(" ", "").Split(',');
-            Assert.AreEqual(dividecolorRegular1[0], dividecolorRegular1[1]);
-            Assert.AreEqual(dividecolorRegular1[1], dividecolorRegular1[2]);
+            var divideColorRegular1 = colorRegularPrice1.Replace("rgba", "").Replace("rgb", "").Replace("(", "").Replace(")", "").Replace(" ", "").Split(',');
+            Assert.AreEqual(divideColorRegular1[0], divideColorRegular1[1]);
+            Assert.AreEqual(divideColorRegular1[1], divideColorRegular1[2]);
  //проверяем красный цвет
             var colorCampaignPrice1 = driver.FindElement(By.CssSelector("div#box-campaigns li:first-child strong.campaign-price")).GetCssValue("color");
-            var dividecolorCampaign1 = colorCampaignPrice1.Replace("rgba(", "").Replace(")", "").Replace(" ", "").Split(',');
+            var dividecolorCampaign1 = colorCampaignPrice1.Replace("rgba", "").Replace("rgb", "").Replace("(", "").Replace(")", "").Replace(" ", "").Split(',');
             Assert.AreEqual("0", dividecolorCampaign1[1]);
             Assert.AreEqual("0", dividecolorCampaign1[2]);
 //переходим по первый товар в блоке Campaigns на главной странице
@@ -74,8 +76,11 @@ namespace csharp_example_task_10
             Assert.AreEqual(driver.FindElement(By.CssSelector("div.information div.price-wrapper s")).GetAttribute("class"), "regular-price");
             Assert.AreEqual(driver.FindElement(By.CssSelector("div.information div.price-wrapper strong")).GetAttribute("class"), "campaign-price");
 //проверяем стили написания цен
-            Assert.AreEqual(driver.FindElement(By.CssSelector("div.information div.price-wrapper s")).GetCssValue("text-decoration-line"), "line-through");
-            Assert.AreEqual(driver.FindElement(By.CssSelector("div.information div.price-wrapper strong")).GetCssValue("font-weight"), "700");
+            var lineThroughSale2 = driver.FindElement(By.CssSelector("div.information div.price-wrapper s")).GetCssValue("text-decoration");
+            Assert.IsTrue(lineThroughSale2.Contains("line-through"));
+            var fattySale2 = driver.FindElement(By.CssSelector("div.information div.price-wrapper strong")).GetCssValue("font-weight");
+            Assert.Contains(fattySale2, new[] { "bold", "700", "800", "900" });
+
 //проверяем размер
             var sizeRegularPrice2 = driver.FindElement(By.CssSelector("div.information div.price-wrapper s")).Size;
             var sizeRegular2 = (sizeRegularPrice2.ToString().Replace("{Width=", "").Replace(" Height=", "").Replace("}", "").Split(','));
@@ -90,12 +95,12 @@ namespace csharp_example_task_10
             Assert.AreEqual(campaignPrice1, campaignPrice2);
 //проверяем серый цвет
             var colorRegularPrice2 = driver.FindElement(By.CssSelector("div.information div.price-wrapper s.regular-price")).GetCssValue("color");
-            var dividecolorRegular2 = colorRegularPrice2.Replace("rgba(", "").Replace(")", "").Replace(" ", "").Split(',');
-            Assert.AreEqual(dividecolorRegular2[0], dividecolorRegular2[1]);
-            Assert.AreEqual(dividecolorRegular2[1], dividecolorRegular2[2]);
-//проверяем красный цвет
+            var divideColorRegular2 = colorRegularPrice2.Replace("rgba", "").Replace("rgb", "").Replace("(", "").Replace(")", "").Replace(" ", "").Split(',');
+            Assert.AreEqual(divideColorRegular2[0], divideColorRegular2[1]);
+            Assert.AreEqual(divideColorRegular2[1], divideColorRegular2[2]);
+           //проверяем красный цвет
             var colorCampaignPrice2 = driver.FindElement(By.CssSelector("div.information div.price-wrapper strong.campaign-price")).GetCssValue("color");
-            var dividecolorCampaign2 = colorCampaignPrice2.Replace("rgba(", "").Replace(")", "").Replace(" ", "").Split(',');
+            var dividecolorCampaign2 = colorCampaignPrice2.Replace("rgba", "").Replace("rgb", "").Replace("(", "").Replace(")", "").Replace(" ", "").Split(',');
             Assert.AreEqual("0", dividecolorCampaign2[1]);
             Assert.AreEqual("0", dividecolorCampaign2[2]);
         }
