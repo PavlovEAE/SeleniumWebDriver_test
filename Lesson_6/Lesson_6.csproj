@@ -71,6 +71,7 @@
     <Compile Include="Task_11.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task_12.cs" />
+    <Compile Include="Task_13.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
