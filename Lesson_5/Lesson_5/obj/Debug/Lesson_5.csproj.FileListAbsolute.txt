@@ -16,4 +16,3 @@ C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Lesson_5\Lesson_5\bin
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Lesson_5\Lesson_5\bin\Debug\WebDriver.Support.xml
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Lesson_5\Lesson_5\obj\Debug\Lesson_5.dll
 C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Lesson_5\Lesson_5\obj\Debug\Lesson_5.pdb
-C:\Users\pavlovaan\Documents\GitHub\SeleniumWebDriver_test\Lesson_5\Lesson_5\obj\Debug\Lesson_5.csprojResolveAssemblyReference.cache
