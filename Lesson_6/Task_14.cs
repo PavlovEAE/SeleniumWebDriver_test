@@ -50,18 +50,18 @@ namespace csharp_example_task_14
                 outsideLink[i].Click();
                 // ждем появления нового окна
                 var listNewWindows = new List<String>();
-                while (true)
+                //ищем идентификатор нового окна
+                for (int j = 0; j < 10; j++)
                 {
-                    //ищем идентификатор нового окна
                     ICollection<string> newWindows = driver.WindowHandles;
                     listNewWindows = newWindows.ToList();
                     foreach (var w in existingWindows)
-                           listNewWindows.Remove(w);
+                        listNewWindows.Remove(w);
                     if (listNewWindows.Count > 0)
-                            break;
+                        j=9;
                     System.Threading.Thread.Sleep(100);
                 }
-
+                Assert.IsTrue(listNewWindows.Count!=0);
                 //переключаемся в новое окно
                 driver.SwitchTo().Window(listNewWindows[0]);
                 // закрываем его
