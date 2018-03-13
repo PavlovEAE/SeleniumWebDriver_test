@@ -27,10 +27,10 @@ namespace csharp_example_task_8
         public void FirstTest_Task_8()
         {
             driver.Url = "http://localhost/litecart/";
-            var elements = driver.FindElements(By.CssSelector(".product.column.shadow.hover-light"));
+            var elements = driver.FindElements(By.ClassName("product"));
             foreach (var element in elements)
             {
-                Assert.AreEqual(1, element.FindElements(By.CssSelector("div[class*=sticker]")).Count);
+                Assert.AreEqual(1, element.FindElements(By.ClassName("sticker")).Count);
             }
 
         }
