@@ -17,14 +17,6 @@ namespace csharp_example_task_13
         private IWebDriver driver;
         private WebDriverWait wait;
 
-        [SetUp]
-        public void start()
-        {
-            driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
-
-        }
 
 
         [Test]
@@ -79,6 +71,16 @@ namespace csharp_example_task_13
         {
             driver.Quit();
             driver = null;
+        }
+
+
+        [SetUp]
+        public void start()
+        {
+            driver = new ChromeDriver();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+
         }
     }
 }
